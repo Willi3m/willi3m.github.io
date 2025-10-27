@@ -6,8 +6,9 @@
     <link rel="stylesheet", href="style.css">
   </head>
   <body>
+     <h1 id="title">Countdown Timer</h1>
       <div class = "container">
-        <h1>Countdown Timer</h1>
+        <img src="sand.webp" alt="sand dial" width="128" height="190">
         Hour:
         <input type="text" class="input" id="hour" size="1" maxlength="2" 
         placeholder="hh">
@@ -17,10 +18,17 @@
         Seconds:
         <input type="text" class="input" id="seconds" size="1" maxlength="2"
         placeholder="ss">
-        <input type="submit" value="start"> <br><br>
-        Countdown: 
-        <input type="submit" value="            ">
-      </div>
-  </body>
 
+        <input type="button" value="start" id="start"> 
+        <input type="button" value="stop" id="stop">
+        <input type="button" value="reset" id="reset">
+        <br></br>
+         
+      </div>
+      <div style="text-align: left;">
+        Countdown:
+      </div>
+  
+      
+  </body>
 </html>
