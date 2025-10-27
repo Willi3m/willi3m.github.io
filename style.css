@@ -1,29 +1,18 @@
-body{
-    display: flex;
-    flex-direction: row;
-    background: linear-gradient(to left bottom, rgb(248, 80, 164), rgb(73, 197, 238));
-    min-height: 100vh;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-}
 .container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    padding: 20px;
-    margin: 5px;
-    width: 50pc;
+    justify-content: space-between;
+}
+#start{
+    height: fit-content;
+}
+#stop{
+    height: fit-content;
+}
+#reset{
+    height: fit-content;
 }
 .input{
-    width: 30px;
-    height: 20px;
-    border: 1px solid red;
-    
+    height: fit-content;
 }
-.button{
-    width: 50px;
-}
-.start{
-    flex-direction: row;
-}
+
