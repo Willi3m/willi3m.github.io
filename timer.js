@@ -1,21 +1,26 @@
-let totalSeconds = 10; 
-let totalMinutes = 0;
-let totalHours = 1;
+document.getElementById("start").addEventListener("click", () => {
+
+hours = document.getElementById("hour").value;
+seconds = document.getElementById("seconds").value;
+minutes = document.getElementById("minutes").value;
+
+})
+
 const myInterval = setInterval(() => {
-  if (totalSeconds < 0) {
-      totalSeconds = 59;
-      totalMinutes--;
+  if (seconds < 0) {
+      seconds = 59;
+      minutes--;
   }
-  if(totalMinutes < 0){
-    totalMinutes = 59;
-    totalHours--;
+  if(minutes < 0){
+    minutes = 59;
+    hours--;
   }
-  if(totalHours < 0){
+  if(hours < 0){
     clearInterval(myInterval);
     document.getElementById("count").innerText = "done";
     return;
   }
-  document.getElementById("count").innerText = totalHours + "h" 
-  + totalMinutes + "m" + totalSeconds + "s"; 
-  totalSeconds--; 
+  document.getElementById("count").innerText = hours + "h" 
+  + minutes + "m" + seconds + "s"; 
+  seconds--; 
 }, 1000);
