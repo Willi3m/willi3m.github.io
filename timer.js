@@ -2,47 +2,44 @@ let totalseconds = 0;
 let myInterval = null;
 let initialTime = 0;
 let isChanged = false;
-let isEmpty = false;
+
 const hourBox = document.getElementById("hour");
 const minuteBox = document.getElementById("minutes");
 const secondsBox = document.getElementById("seconds");
-
+const reset = document.getElementById("reset");
 document.getElementById("start").addEventListener("click", () => {
   if (totalseconds === 0) {
       timeSet();
   }
+  reset.disabled = false;
   Timer();
 });
 
 hourBox.addEventListener("change", function(event){
   isChanged = true;
   const value = hourBox.value;
-  if(value.trim() == ''){
-    //do nothing
-  }else{
-    inputCheck();
-  }
+  isEmpty(value);
 })
 
 minuteBox.addEventListener("change", function(event){
    isChanged = true;
    const value = minuteBox.value;
-  if(value.trim() == ''){
-    //do nothing
-  }else{
-    inputCheck();
-  }
+   isEmpty(value);
 })
 
 secondsBox.addEventListener("change", function(event){
    isChanged = true;
    const value = secondsBox.value;
-   if(value.trim() == ''){
-    //do nothing
-   }else{
-    inputCheck();
-   }
+   isEmpty(value);
 })
+
+function isEmpty(value){
+  if(value.trim() == ''){
+    return reset.disabled = true;
+   }else{
+    return inputCheck();
+   }
+}
 
 function inputCheck(){
   if(isChanged === true){
@@ -69,7 +66,7 @@ function Timer() {
       if (totalseconds <= 0) {
         clearInterval(myInterval);
         myInterval = null;
-        document.getElementById("count").innerText = "Completed";
+        document.getElementById("count").innerText = "00:00:00";
         return;
       }
 
@@ -89,7 +86,18 @@ document.getElementById("stop").addEventListener("click", () => {
   pauseTimer();
 });
 
+//resets timer to 0
 document.getElementById("reset").addEventListener("click", () => {
+  /*
   totalseconds = initialTime;
+  let hour = hourBox.value;
+  if(hour.trim() == ''){
+    totalseconds = 0;
+  }
+  */
+  totalseconds = 0;
   Timer();
 })
+/*
+issue when chaning the time then hitting reset it resets to change time
+*/
