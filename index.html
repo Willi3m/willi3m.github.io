@@ -8,22 +8,29 @@
   <body>
      <h1 id="title">Countdown Timer</h1>
       <div class = "container">
-        <img src="sand.webp" alt="sand dial" width="128" height="190">
-        Hour:
-        <input type="text" class="input" id="hour" size="1" maxlength="2" 
-        placeholder="00" >
-        Minutes:
-        <input type="text" class="input" id="minutes" size="1" maxlength="2"
-        placeholder="00">
-        Seconds:
-        <input type="text" class="input" id="seconds" size="1" maxlength="2"
-        placeholder="00" value="10">
 
-        <input type="button" value="start" id="start"> 
-        <input type="button" value="stop" id="stop">
-        <input type="button" value="reset" id="reset">
+        <div class="item">
+          Hours:
+          <input type="text" class="input" id="hour" size="1" maxlength="2" 
+          placeholder="00">
+        </div>
+        <div class="item">
+          Minutes:
+          <input type="text" class="input" id="minutes" size="1" maxlength="2"
+          placeholder="00" >
+        </div>
+
+        <div class="item">
+          Seconds:
+          <input type="text" class="input" id="seconds" size="1" maxlength="2"
+          placeholder="00" >
+        </div>
+
+        <div class="item"><input type="button" value="start" id="start"> </div>
+        <div class="item"><input type="button" value="stop" id="stop"></div>
+        <div class="item"><input type="button" value="reset" id="reset" disabled></div>
+
         <br></br>
-         
       </div>
       <div style="text-align: left;" id ="count">
         Countdown:
