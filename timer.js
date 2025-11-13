@@ -7,35 +7,23 @@ const hourBox = document.getElementById("hour");
 const minuteBox = document.getElementById("minutes");
 const secondsBox = document.getElementById("seconds");
 const reset = document.getElementById("reset");
+const startButton = document.getElementById("start");
 document.getElementById("start").addEventListener("click", () => {
   if (totalseconds === 0) {
       timeSet();
   }
-  reset.disabled = false;
   Timer();
 });
 
-hourBox.addEventListener("change", function(event){
-  isChanged = true;
-  const value = hourBox.value;
-  isEmpty(value);
-})
+hourBox.addEventListener("change", timeSet)
 
-minuteBox.addEventListener("change", function(event){
-   isChanged = true;
-   const value = minuteBox.value;
-   isEmpty(value);
-})
+minuteBox.addEventListener("change",timeSet)
 
-secondsBox.addEventListener("change", function(event){
-   isChanged = true;
-   const value = secondsBox.value;
-   isEmpty(value);
-})
+secondsBox.addEventListener("chnage",timeSet)
 
 function isEmpty(value){
   if(value.trim() == ''){
-    return reset.disabled = true;
+
    }else{
     return inputCheck();
    }
@@ -86,18 +74,7 @@ document.getElementById("stop").addEventListener("click", () => {
   pauseTimer();
 });
 
-//resets timer to 0
 document.getElementById("reset").addEventListener("click", () => {
-  /*
-  totalseconds = initialTime;
-  let hour = hourBox.value;
-  if(hour.trim() == ''){
-    totalseconds = 0;
-  }
-  */
   totalseconds = 0;
   Timer();
 })
-/*
-issue when chaning the time then hitting reset it resets to change time
-*/
