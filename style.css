@@ -1,18 +1,26 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-#start{
-    height: fit-content;
-}
-#stop{
-    height: fit-content;
-}
-#reset{
-    height: fit-content;
-}
-.input{
-    height: fit-content;
+body {
+  height: 100vh;                  
+  display: grid;                  
+  place-items: center;            
+  margin: 0;
+  background-color: #f8f8f8;      
 }
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, auto);  
+  gap: 1em;                                
+  justify-content: center;                 
+  align-items: center;                     
+  background-color: #e3e3e3;               
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.item {
+  text-align: center;
+  padding: 0.5em 1em;
+  background-color: var(--primary-color, #ddd);
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
