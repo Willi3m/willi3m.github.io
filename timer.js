@@ -1,13 +1,10 @@
 let totalseconds = 0;
 let myInterval = null;
-let initialTime = 0;
-let isChanged = false;
 
 const hourBox = document.getElementById("hour");
 const minuteBox = document.getElementById("minutes");
 const secondsBox = document.getElementById("seconds");
-const reset = document.getElementById("reset");
-const startButton = document.getElementById("start");
+
 document.getElementById("start").addEventListener("click", () => {
   if (totalseconds === 0) {
       timeSet();
@@ -20,20 +17,6 @@ hourBox.addEventListener("change", timeSet)
 minuteBox.addEventListener("change",timeSet)
 
 secondsBox.addEventListener("chnage",timeSet)
-
-function isEmpty(value){
-  if(value.trim() == ''){
-
-   }else{
-    return inputCheck();
-   }
-}
-
-function inputCheck(){
-  if(isChanged === true){
-    timeSet();
-  }
-}
 
 function timeSet(){
   const hours = Number(document.getElementById("hour").value);
