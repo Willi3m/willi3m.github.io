@@ -37,7 +37,7 @@ function Timer() {
       if (totalseconds <= 0) {
         clearInterval(myInterval);
         myInterval = null;
-        document.getElementById("count").innerText = "00:00:00";
+        document.getElementById("count").innerText = "00: 00: 00";
         return;
       }
 
@@ -46,7 +46,8 @@ function Timer() {
       const seconds = totalseconds % 60;
 
       document.getElementById("count").innerText =
-        hours + "h " + minutes + "m " + seconds + "s";
+      String(hours).padStart(2, '0') + ": " + String(minutes).padStart(2, '0') + ": "
+      + String(seconds).padStart(2, '0');
 
       totalseconds--;
     }, 1000);
@@ -61,3 +62,4 @@ document.getElementById("reset").addEventListener("click", () => {
   totalseconds = 0;
   Timer();
 })
+
