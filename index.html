@@ -6,10 +6,9 @@
     <link rel="stylesheet", href="style.css">
   </head>
   <body>
-     <h1 id="title">Countdown Timer</h1>
       <div class = "container">
-
-        <div class="item">
+        <div class="inputBoxes">
+          <div class="item">
           Hours:
           <input type="text" class="input" id="hour" size="1" maxlength="2" 
           placeholder="00">
@@ -19,21 +18,28 @@
           <input type="text" class="input" id="minutes" size="1" maxlength="2"
           placeholder="00" >
         </div>
-
         <div class="item">
           Seconds:
           <input type="text" class="input" id="seconds" size="1" maxlength="2"
           placeholder="00" >
         </div>
-
-        <div class="item"><input type="button" value="start" id="start"> </div>
-        <div class="item"><input type="button" value="stop" id="stop"></div>
-        <div class="item"><input type="button" value="reset" id="reset"></div>
-
-        <br></br>
       </div>
-      <div style="text-align: left;" id ="count">
-        Countdown:
+        <div class = "buttonBox">
+          <div><input type="button" value="start" id="start"></div>
+          <div><input type="button" value="stop" id="stop"></div>
+          <div><input type="button" value="reset" id="reset"></div>
+        </div>
+
+        <div class="clock-container">
+          <img src="clock.png.png" alt="clock-face" style="width:400px;height:400px;">
+        </div>
+
+        <div style="color: antiquewhite;" class="title"> Timer</div>
+
+        <div class="timer" style="text-align: left" id ="count" style="font-size: 20000px;">
+        00: 00: 00
+        </div>
+        
       </div>
       <script src="timer.js"></script>
   </body>
